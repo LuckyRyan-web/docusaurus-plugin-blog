@@ -1,6 +1,6 @@
 {
   "name": "@ryan-liu/plugin-content-docs",
-  "version": "2.0.1-beta.0",
+  "version": "2.0.1-beta.1",
   "description": "Docs plugin for Docusaurus.",
   "main": "lib/index.js",
   "sideEffects": false,
