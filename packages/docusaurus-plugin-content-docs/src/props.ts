@@ -6,8 +6,8 @@
  */
 
 import _ from 'lodash';
-import {createDocsByIdIndex} from './docs';
-import type {VersionTag} from './types';
+import { createDocsByIdIndex } from './docs';
+import type { VersionTag } from './types';
 import type {
   SidebarItemDoc,
   SidebarItem,
@@ -47,7 +47,7 @@ Available document ids are:
     const {
       title,
       permalink,
-      frontMatter: {sidebar_label: sidebarLabel},
+      frontMatter: { sidebar_label: sidebarLabel },
     } = docMetadata;
     return {
       type: 'link',
@@ -74,9 +74,9 @@ Available document ids are:
   }
 
   function convertCategory(item: SidebarItemCategory): PropSidebarItemCategory {
-    const {link, ...rest} = item;
+    const { link, ...rest } = item;
     const href = getCategoryLinkHref(link);
-    return {...rest, items: item.items.map(normalizeItem), ...(href && {href})};
+    return { ...rest, items: item.items.map(normalizeItem), ...(href && { href }) };
   }
 
   function normalizeItem(item: SidebarItem): PropSidebarItem {
@@ -147,6 +147,7 @@ export function toTagDocListProp({
     // Sort docs by title
     list.sort((doc1, doc2) => doc1.title.localeCompare(doc2.title));
     return list.map((doc) => ({
+      ...doc,
       id: doc.id,
       title: doc.title,
       description: doc.description,
